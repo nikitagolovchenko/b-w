@@ -1,0 +1,26 @@
+.nav {
+    max-width: 710px;
+    margin: 0 auto;
+
+    &__inner {
+        @include flex ($justify-content: flex-start);
+    }    
+
+    &__item {
+        margin: 21px 20px;
+        color: $gray-98;
+        font-size: $font-size-13;
+        letter-spacing: $letter-spacing-40;
+        font-family: $roboto;
+        cursor: pointer;
+        @extend %transition;
+
+        &:nth-child(3) {
+            margin-right: auto;
+        }
+
+        &:hover, &.active {
+            color: $black-01;
+        }
+    }
+}

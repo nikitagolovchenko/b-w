@@ -36,12 +36,16 @@ $letter-spacing-20:  0.02em;
 $letter-spacing-30:  0.03em;
 $letter-spacing-40:  0.04em;
 
-$helvetica-lt:      'Helvetica Neue LT Pro - Lt' sans-serif;
-$helvetica-roman:   'Helvetica Neue LT Pro - Roman' sans-serif;
-$helvetica-md:      'Helvetica Neue LT Pro - Md' sans-serif;
+$helvetica-lt:      'Helvetica Neue LT Pro - Lt', sans-serif;
+$helvetica-roman:   'Helvetica Neue LT Pro - Roman', sans-serif;
+$helvetica-md:      'Helvetica Neue LT Pro - Md', sans-serif;
 $roboto:            'Roboto', sans-serif;
 $montserrat:        'Montserrat', sans-serif;
 $merriweather:      'Merriweather', serif;
+
+$light: 300;
+$regular: 400;
+$bold: 700;
 
 $screen-sm:         576px;
 $screen-md:         768px;
