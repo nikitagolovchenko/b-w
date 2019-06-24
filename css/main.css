@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i|Montserrat|Roboto&display=swap&subset=cyrillic-ext");
-.nav__item {
+.nav__item, .btn {
   transition: 0.3s linear; }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -78,7 +78,13 @@ img {
   font-weight: 500;
   font-style: normal; }
 .header {
-  position: relative; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%; }
+  .header__inner {
+    position: relative; }
   .header__logo {
     position: absolute;
     top: 0;
@@ -105,5 +111,70 @@ img {
       margin-right: auto; }
     .nav__item:hover, .nav__item.active {
       color: #010101; }
+
+.intro {
+  height: 100vh;
+  text-align: center;
+  position: relative; }
+  .intro__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .intro__title {
+    color: #1d1e1f;
+    font-size: 2.75em;
+    letter-spacing: 0.03em;
+    margin-bottom: 5px; }
+  .intro__subtitle {
+    color: #898888;
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    margin-bottom: 40px; }
+
+.btn {
+  color: #000;
+  font-size: 0.8125em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: transparent;
+  padding: 20px 50px;
+  border: 1px solid #000;
+  outline: none;
+  cursor: pointer; }
+  .btn:hover {
+    color: #fff;
+    background-color: #000; }
+  .btn:focus {
+    background-color: #777777; }
+
+.scroll-down {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: calc(100% - 90px);
+  left: 50%;
+  height: 55px;
+  transform: translate(-50%, -100%);
+  cursor: pointer; }
+  .scroll-down:hover .scroll-down__item {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); }
+  .scroll-down__item {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; }
+    .scroll-down__item--light {
+      background-color: #f0f0f0; }
+    .scroll-down__item--gray {
+      background-color: #e0e0e0; }
+    .scroll-down__item--dark {
+      background-color: #d0d0d0; }
 
 /*# sourceMappingURL=main.css.map */

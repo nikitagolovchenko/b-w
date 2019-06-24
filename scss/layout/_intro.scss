@@ -1,0 +1,28 @@
+.intro {
+    height: 100vh;
+    text-align: center;
+    position: relative;
+
+    &__inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__title {
+        color: $dark-blue;
+        font-size: 2.75em;
+        letter-spacing: $letter-spacing-30;
+        margin-bottom: 5px;
+    }
+
+    &__subtitle {
+        color: $gray-89;
+        font-family: $merriweather;
+        font-style: italic;
+        font-weight: $light;
+        letter-spacing: $letter-spacing-30;
+        margin-bottom: 40px;
+    }
+}

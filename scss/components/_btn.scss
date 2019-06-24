@@ -1,0 +1,23 @@
+.btn {
+    color: $black;
+    font-size: $font-size-13;
+    font-family: $montserrat;
+    font-weight: $regular;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-40;
+    background-color: transparent;
+    padding: 20px 50px;
+    border: 1px solid $black;
+    outline: none;
+    cursor: pointer;
+    @extend %transition;
+
+    &:hover {
+        color: $white;
+        background-color: $black;
+    }
+
+    &:focus {
+        background-color: $gray-7;
+    }
+}
