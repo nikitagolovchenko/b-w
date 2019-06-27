@@ -20,4 +20,15 @@
     &:focus {
         background-color: $gray-7;
     }
+
+    &--simple {
+        font-family: $helvetica-md;
+        font-size: $font-size-16;
+        background-color: $white;
+        border: 0;
+
+        &:hover {
+            background-color: $gray-98;
+        }
+    }
 }

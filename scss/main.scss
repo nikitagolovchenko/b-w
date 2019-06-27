@@ -6,13 +6,19 @@
 @import "base/core";
 @import "base/typography";
 
+@import "components/btn";
+@import "components/scroll-down";
+@import "components/caption";
+@import "components/socials";
+@import "components/address";
+
 @import "layout/header";
 @import "layout/nav";
 @import "layout/intro";
 @import "layout/years";
 @import "layout/team";
+@import "layout/services";
+@import "layout/contact";
+@import "layout/form";
+@import "layout/footer";
 
-@import "components/btn";
-@import "components/scroll-down";
-@import "components/caption";
-@import "components/socials";
