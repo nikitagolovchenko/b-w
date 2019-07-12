@@ -1,26 +1,135 @@
 .nav {
-    max-width: 710px;
-    margin: 0 auto;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @media (min-width: $screen-md) {
+        display: block;
+        position: relative;
+        background-color: transparent;
+        max-width: 710px;
+        margin: 0 auto;
+    }
 
     &__inner {
-        @include flex ($justify-content: flex-start);
+        width: 60%;
+        height: 100%;
+        background-color: #333;
+        margin-left: auto;
+        padding: 100px 0;
+
+        @media (min-width: $screen-md) {
+            @include flex ($justify-content: flex-start);
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
     }    
 
     &__item {
-        margin: 21px 20px;
-        color: $gray-98;
-        font-size: $font-size-13;
+        padding: 20px 60px;
+        
+        color: $gray-e4;
+        font-size: $font-size-16;
         letter-spacing: $letter-spacing-40;
         font-family: $roboto;
         cursor: pointer;
         @extend %transition;
+
+        @media (min-width: $screen-md) {
+            color: $gray-98;
+            font-size: $font-size-13;
+            margin: 21px 20px;
+            padding: 0;
+        }
 
         &:nth-child(3) {
             margin-right: auto;
         }
 
         &:hover, &.active {
-            color: $black-01;
+            background-color: $dark-gray-46;
+
+            @media (min-width: $screen-md) {
+                background-color: transparent;
+                color: $black-01;
+            }
+        }
+    }
+}
+
+.nav-toggle {
+    display: block;
+    width: 30px;
+    position: fixed;
+    z-index: 2000;
+    right: 15px;
+    top: 30px;
+    transform: translateY(-50%);
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+
+    @media (min-width: $screen-md) {
+        display: none;
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+        position: relative;
+        z-index: 10;
+        @extend %transition;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+            @extend %transition;
+        }
+
+        &:before {
+            top: -8px;
+        }
+
+        &:after {
+            bottom: -8px;
+        }
+    }
+
+    &.active {
+        .nav-toggle__item {
+            background-color: transparent;
+            @extend %transition;
+
+            &:before {
+                background-color: $gray-e4;
+                transform: rotate(135deg);
+                top: 0;
+                @extend %transition;
+            }
+
+            &:after {
+                background-color: $gray-e4;
+                transform: rotate(-135deg);
+                bottom: 0;
+                @extend %transition;
+            }
         }
     }
 }

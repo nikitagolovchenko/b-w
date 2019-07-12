@@ -1,5 +1,6 @@
 .header {
-    position: absolute;
+    position: fixed;
+    background-color: #fff;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -7,12 +8,21 @@
 
     &__inner {
         position: relative;
+        display: inline-block;
+        vertical-align: top;
+
+        @media (min-width: $screen-md) {
+            display: block;
+        }
     }
 
     &__logo {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+
+        @media (min-width: $screen-md) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
