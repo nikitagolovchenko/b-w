@@ -2,8 +2,7 @@ $(function() {
     let navToggle = $("#navToggle");
     let nav = $("#nav");
 
-
-
+    // бургер-меню и панель навигации
     navToggle.on("click", function(event) {
         event.preventDefault();
         
@@ -16,7 +15,7 @@ $(function() {
         }
     });
     
-
+    // скролл к элементам и удаление active
     $("[data-link]").on("click", function(event) {  
 		event.preventDefault(); 
 
@@ -32,6 +31,4 @@ $(function() {
 		}, 500);  
 	});
 
-
-
-})
+});
