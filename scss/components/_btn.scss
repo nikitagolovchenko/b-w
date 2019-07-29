@@ -1,0 +1,39 @@
+.btn {
+    color: $black;
+    font-size: $font-size-13;
+    font-family: $montserrat;
+    font-weight: $regular;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-40;
+    background-color: transparent;
+    padding: 15px 30px;
+    border: 1px solid $black;
+    outline: none;
+    cursor: pointer;
+    @extend %transition;
+
+    @media (min-width: $screen-md) {
+        padding: 20px 50px;
+    }
+
+
+    &:hover {
+        color: $white;
+        background-color: $black;
+    }
+
+    &:focus {
+        background-color: $gray-7;
+    }
+
+    &--simple {
+        font-family: $helvetica-md;
+        font-size: $font-size-16;
+        background-color: $white;
+        border: 0;
+
+        &:hover {
+            background-color: $gray-98;
+        }
+    }
+}

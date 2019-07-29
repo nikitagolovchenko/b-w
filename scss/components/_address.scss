@@ -1,0 +1,34 @@
+.address {
+    @include flex ($justify-content: space-between);
+
+    &__method {
+        text-align: center;
+        max-width: 580px;
+        margin: 0 auto;
+        padding: 10px;
+        width: 100%;
+        @include flex ($flex-direction: column, $justify-content: center);
+        margin-bottom: 10px;
+
+        @media (min-width: $screen-sm) {
+            width: 50%;
+        }
+
+        @media (min-width: $screen-md) {
+            width: 33.33333%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__type {
+        display: inline-block;
+        font-size: $font-size-22;
+        margin-bottom: 10px;
+        color: $black-32;
+        @extend %transition;
+
+        &:hover {
+            color: $dark-gray-46;
+        }
+    }
+}

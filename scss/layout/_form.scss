@@ -1,0 +1,49 @@
+.form {
+
+    &__text, &__email, &__number, &__textarea, &__submit {
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        font-family: $helvetica-md;
+        border: 1px solid $gray-9;
+
+        @media (min-width: $screen-md) {
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        &::placeholder {
+            font-family: $helvetica-lt;
+            font-size: $font-size-15;
+            color: $gray-89;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+        min-height: 70px;
+
+        @media (min-width: $screen-sm) {
+            min-height: 100px;
+        }
+
+        @media (min-width: $screen-md) {
+            min-height: 195px;
+        }
+    }
+
+    &__submit {
+        color: $white-fe;
+        font-size: $font-size-17;
+        background-color: $black-16;
+        border: 0;
+        cursor: pointer;
+        @extend %transition;
+        outline: none;
+
+        &:hover {
+            background-color: #999999;
+            color: $black-32;
+        }
+    }
+}
