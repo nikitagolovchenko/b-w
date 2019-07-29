@@ -1,11 +1,16 @@
 .form {
 
     &__text, &__email, &__number, &__textarea, &__submit {
-        padding: 15px;
+        padding: 10px;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         font-family: $helvetica-md;
         border: 1px solid $gray-9;
+
+        @media (min-width: $screen-md) {
+            padding: 15px;
+            margin-bottom: 20px;
+        }
 
         &::placeholder {
             font-family: $helvetica-lt;
@@ -16,7 +21,15 @@
 
     &__textarea {
         resize: none;
-        min-height: 195px;
+        min-height: 70px;
+
+        @media (min-width: $screen-sm) {
+            min-height: 100px;
+        }
+
+        @media (min-width: $screen-md) {
+            min-height: 195px;
+        }
     }
 
     &__submit {

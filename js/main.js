@@ -1,6 +1,8 @@
 $(function() {
     let navToggle = $("#navToggle");
     let nav = $("#nav");
+    let navInner = $("#navInner");
+    let scrollDown = $("#scrollDown");
 
     // бургер-меню и панель навигации
     navToggle.on("click", function(event) {
@@ -9,10 +11,20 @@ $(function() {
         navToggle.toggleClass("active");
 
         if(navToggle.hasClass("active")) {
-            nav.slideDown(300);
+            nav.show();
+            navInner.slideDown(300);
         } else {
-            nav.slideUp(300);
+            nav.hide();
+            navInner.slideUp(300);
         }
+
+        nav.on("click", function(event) {
+            event.preventDefault();
+    
+            navToggle.removeClass("active");
+            navInner.slideUp(300);
+            nav.hide();
+        })
     });
     
     // скролл к элементам и удаление active
@@ -24,11 +36,24 @@ $(function() {
 			blockOffset = $(blockId).offset().top;  
 
         navToggle.removeClass("active");  
-        nav.slideUp(300);
+        if(navToggle.hasClass("active")) {
+            navInner.slideUp(300);
+            nav.hide();
+        }
 
 		$("html, body").animate({   
 			scrollTop: blockOffset
-		}, 500);  
-	});
+        }, 500);  
+    });
+    
+
+    // кнопка скролл-вниз
+    scrollDown.on('click', function() {
+
+		$('html, body').animate({
+            scrollTop: $(window).height(),
+        }, 1000);
+	})
+    
 
 });
